@@ -16,13 +16,13 @@ namespace C_SharpNotepad
         {
             InitializeComponent();
         }
-
+        // clear text box
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Able to clear the text box with the new option
             richTextBox1.Clear();
         }
-
+        // new text box
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openNew = new OpenFileDialog();
@@ -34,6 +34,19 @@ namespace C_SharpNotepad
                 richTextBox1.LoadFile(openNew.FileName, RichTextBoxStreamType.PlainText);
             // Sets text to new File txt
             this.Text = openNew.FileName;
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveText = new SaveFileDialog();
+            saveText.Title = "Save";
+            // Able to open all types of files 
+            saveText.Filter = "Text Document(*.txt)|*.txt|All Files(*.*)|*.*";
+            // if ok, load file name in the richTextBox1 (only txt files, not .doc (word)
+            if (saveText.ShowDialog() == DialogResult.OK)
+                richTextBox1.SaveFile(saveText.FileName, RichTextBoxStreamType.PlainText);
+            // Sets text to new File txt
+            this.Text = saveText.FileName;
         }
     }
 }
