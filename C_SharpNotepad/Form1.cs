@@ -16,5 +16,20 @@ namespace C_SharpNotepad
         {
             InitializeComponent();
         }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Able to clear the text box with the new option
+            richTextBox1.Clear();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openNew = new OpenFileDialog();
+            openNew.Title = "Open";
+            // Able to open all types of files 
+            openNew.Filter = "Text Document(*.txt)|*.txt|All Files(*.*)|*.*";
+
+        }
     }
 }
