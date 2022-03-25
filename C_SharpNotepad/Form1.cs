@@ -29,7 +29,11 @@ namespace C_SharpNotepad
             openNew.Title = "Open";
             // Able to open all types of files 
             openNew.Filter = "Text Document(*.txt)|*.txt|All Files(*.*)|*.*";
-
+            // if ok, load file name in the richTextBox1 (only txt files, not .doc (word)
+            if (openNew.ShowDialog() == DialogResult.OK)
+                richTextBox1.LoadFile(openNew.FileName, RichTextBoxStreamType.PlainText);
+            // Sets text to new File txt
+            this.Text = openNew.FileName;
         }
     }
 }
