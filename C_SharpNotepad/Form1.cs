@@ -35,7 +35,7 @@ namespace C_SharpNotepad
             // Sets text to new File txt
             this.Text = openNew.FileName;
         }
-
+        // Save text box
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveText = new SaveFileDialog();
@@ -47,6 +47,16 @@ namespace C_SharpNotepad
                 richTextBox1.SaveFile(saveText.FileName, RichTextBoxStreamType.PlainText);
             // Sets text to new File txt
             this.Text = saveText.FileName;
+        }
+        // Exit text box
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        // Set date and time
+        private void dateTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = System.DateTime.Now.ToString();
         }
     }
 }
