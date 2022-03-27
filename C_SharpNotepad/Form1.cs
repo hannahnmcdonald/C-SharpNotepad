@@ -40,9 +40,9 @@ namespace C_SharpNotepad
         {
             SaveFileDialog saveText = new SaveFileDialog();
             saveText.Title = "Save";
-            // Able to open all types of files 
+            // Able to save all types of files 
             saveText.Filter = "Text Document(*.txt)|*.txt|All Files(*.*)|*.*";
-            // if ok, load file name in the richTextBox1 (only txt files, not .doc (word)
+            // if ok, save file name in the richTextBox1 (only txt files, not .doc (word)
             if (saveText.ShowDialog() == DialogResult.OK)
                 richTextBox1.SaveFile(saveText.FileName, RichTextBoxStreamType.PlainText);
             // Sets text to new File txt
